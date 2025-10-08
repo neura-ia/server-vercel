@@ -1,23 +1,27 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/**/*.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "public/**",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/public/$1"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/exchange_code",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/api/refresh_token",
+      "dest": "/api/index.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
+}
