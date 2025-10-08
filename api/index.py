@@ -201,11 +201,6 @@ def refresh_token():
 # ============================================
 # Handler para Vercel
 # ============================================
-def handler(request):
-    with app.test_request_context(
-        request.get_data(), 
-        method=request.method, 
-        headers=dict(request.headers),
-        path=request.path
-    ):
-        return app.full_dispatch_request()
+app.debug = False
+
+handler = app
