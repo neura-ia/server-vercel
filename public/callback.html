@@ -76,7 +76,7 @@
         const database = getDatabase(app);
 
         // ⚠️ REEMPLAZA CON TU URL DE CLOUD FUNCTION
-        const EXCHANGE_CODE_URL = 'https://REGION-PROJECT.cloudfunctions.net/exchangeCode';
+        const EXCHANGE_CODE_URL = 'https://server-vercel-dun-one.vercel.app/api/exchange_code';
 
         const statusEl = document.getElementById('status');
         const errorEl = document.getElementById('error');
@@ -158,4 +158,5 @@
         handleCallback();
     </script>
 </body>
+
 </html>
