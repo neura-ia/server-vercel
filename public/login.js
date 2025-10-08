@@ -39,7 +39,7 @@ const OAUTH_CONFIG = {
         'https://www.googleapis.com/auth/spreadsheets'
     ],
     // URL de tu Cloud Function
-    exchangeCodeUrl: 'https://server-vercel-dun-one.vercel.app/api/exchange_code.py'
+    exchangeCodeUrl: 'https://server-vercel-dun-one.vercel.app/api/exchange_code'
 };
 
 // Inicializar Firebase
@@ -125,4 +125,5 @@ onAuthStateChanged(auth, async (user) => {
 
 
 showLoading('Verificando sesión...');
+
 
