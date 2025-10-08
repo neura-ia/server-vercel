@@ -201,6 +201,5 @@ def refresh_token():
 # ============================================
 # Handler para Vercel
 # ============================================
-app.debug = False
+app = app
 
-handler = app
