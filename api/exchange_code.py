@@ -19,7 +19,7 @@ if not firebase_admin._apps:
     try:
         # Cargar service account desde variable de entorno
         service_account_info = json.loads(FIREBASE_SERVICE_ACCOUNT)
-        cred = credentials.Certificate(service_account_info)
+        cred = credentials.Certificate("api/aura-3206b-firebase-adminsdk-fbsvc-04ae7505b4.json")
         firebase_admin.initialize_app(cred)
     except Exception as e:
         print(f"Error inicializando Firebase: {e}")
@@ -144,4 +144,5 @@ def exchange_code():
 # Para Vercel
 def handler(request):
     with app.test_request_context(request.get_data(), method=request.method, headers=dict(request.headers)):
+
         return app.full_dispatch_request()
