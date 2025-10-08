@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Aura - Configuración</title>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <img id="userAvatar" alt="Avatar" src="https://via.placeholder.com/60">
+            <div class="top-bar-user-info">
+                <div class="top-bar-user-name" id="userName">Usuario</div>
+                <div class="top-bar-user-email" id="userEmail">email@example.com</div>
+            </div>
+        </div>
+        <button class="logout-btn" id="logoutBtn">Cerrar Sesión</button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <div class="container">
+            <div class="header">
+                <h1>Aura</h1>
+                <p>Configuración de tu Agente de IA</p>
+            </div>
+            
+            <div class="loading" id="loading">Cargando...</div>
+            <div class="success-message" id="successMessage">¡Configuración guardada exitosamente!</div>
+            <div class="error-message" id="errorMessage">Error al guardar. Intenta nuevamente.</div>
+            
+            <form id="configForm">
+                <!-- Sección 1: Información Básica -->
+                <div class="form-section">
+                    <div class="section-header active" data-section="section1">
+                        <div class="section-title">
+                            <span class="section-number">1</span>
+                            <h3>Información Básica</h3>
+                        </div>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content active" id="section1">
+                        <div class="form-group">
+                            <label for="nameAgent">Nombre del Agente</label>
+                            <input type="text" id="nameAgent" placeholder="Ej: Dentino" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nameBussi">Nombre del Negocio</label>
+                            <input type="text" id="nameBussi" placeholder="Ej: Orto Dent" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phoneNumber">Número de Teléfono</label>
+                            <input type="tel" id="phoneNumber" placeholder="Ej: +52 123 456 7890" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 2: Información del Negocio -->
+                <div class="form-section">
+                    <div class="section-header" data-section="section2">
+                        <div class="section-title">
+                            <span class="section-number">2</span>
+                            <h3>Información del Negocio</h3>
+                        </div>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content" id="section2">
+                        <div class="form-group">
+                            <label for="infoBussi">Información del Negocio</label>
+                            <textarea id="infoBussi" placeholder="Describe tu negocio..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servisProduct">Servicios y Productos</label>
+                            <textarea id="servisProduct" placeholder="Lista de servicios y precios..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 3: Horarios y Pagos -->
+                <div class="form-section">
+                    <div class="section-header" data-section="section3">
+                        <div class="section-title">
+                            <span class="section-number">3</span>
+                            <h3>Horarios y Métodos de Pago</h3>
+                        </div>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content" id="section3">
+                        <div class="form-group">
+                            <label for="schedule">Horarios</label>
+                            <textarea id="schedule" placeholder="Horarios de atención..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="add">Métodos de Pago y Seguros</label>
+                            <textarea id="add" placeholder="Formas de pago aceptadas..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 4: Datos a Solicitar -->
+                <div class="form-section">
+                    <div class="section-header" data-section="section4">
+                        <div class="section-title">
+                            <span class="section-number">4</span>
+                            <h3>Datos a Solicitar</h3>
+                        </div>
+                        <span class="section-toggle">▼</span>
+                    </div>
+                    <div class="section-content" id="section4">
+                        <div class="form-group">
+                            <label>Datos a Solicitar (presiona coma o Enter para agregar)</label>
+                            <div class="tags-container" id="tagsContainer">
+                                <input type="text" class="tags-input" id="tagsInput" placeholder="Escribe y presiona coma o Enter...">
+                            </div>
+                        </div>
+                        
+                        <div id="sheetLinkContainer" style="display: none; margin-top: 15px; padding: 15px; background: #e8f5e9; border-radius: 8px; border: 1px solid #4caf50;">
+                            <p style="margin: 0 0 10px 0; color: #2e7d32; font-weight: 600;">📊 Google Sheet creado exitosamente</p>
+                            <a id="sheetLink" href="#" target="_blank" style="color: #1976d2; text-decoration: none; font-size: 14px;">
+                                Ver hoja de datos →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-save" id="saveBtn">Guardar Configuración</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Barra Inferior -->
+    <div class="bottom-bar">
+        <p>© 2025 Grupo Neura. Todos los derechos reservados.</p>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
