@@ -18,7 +18,7 @@ from firebase_admin import credentials, auth
 if not firebase_admin._apps:
     try:
         service_account_info = json.loads(FIREBASE_SERVICE_ACCOUNT)
-        cred = credentials.Certificate("api/aura-3206b-firebase-adminsdk-fbsvc-04ae7505b4.json")
+        cred = credentials.Certificate("api/aura-3206b-firebase-adminsdk-fbsvc-b3df4c2d7a.json")
         firebase_admin.initialize_app(cred)
     except Exception as e:
         print(f"Error inicializando Firebase: {e}")
@@ -202,4 +202,5 @@ def refresh_token():
 # Handler para Vercel
 # ============================================
 app = app
+
 
